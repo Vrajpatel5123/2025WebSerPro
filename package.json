@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":  "node server/index.js"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.4.1"
+  "dependencies": {
+    "express": "^4.21.2",
+    "dayjs":"^1.11.13"
+  }
 }
