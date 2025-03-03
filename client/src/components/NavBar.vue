@@ -1,12 +1,22 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 
+// import {ref, reactive} from 'vue'
+// the ref function is the core of vue
+// Reactive takes every varabiles in your object and creates a new object.
+// It actually calling a setter function. (calling a getter function and gets the function and return the function)
+
+
+const isActive = ref(false)
 </script>
 
 <template>
 <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+    <div class="container">
   <div class="navbar-brand">
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="30" />
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        :class:"{'is-active' : isActive}" @click="isActive = !isActive">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -14,7 +24,7 @@
     </a>
   </div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
+  <div  class="navbar-menu" :class="{'is-active' : isActive}">
     <div class="navbar-start">
 
 
@@ -61,6 +71,7 @@
       </div>
     </div>
   </div>
+</div>
 </nav>
 </template>
 
