@@ -10,6 +10,7 @@ import { ref } from 'vue';
 
  function removeNotification(index: number ) {
      notifications.value.splice(index, 1);
+     //when using ref, you have to use .value to access the value
  };
 </script>
 
