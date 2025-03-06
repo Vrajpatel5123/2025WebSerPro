@@ -15,8 +15,8 @@ const isActive = ref(false)
     <div class="container">
   <div class="navbar-brand">
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="30" />
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-    :class:"{'is-active' : isActive}" @click="isActive = !isActive">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"
+    :class="{'is-active': isActive}" @click="isActive = !isActive">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
