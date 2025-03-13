@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import { addToCart } from '@/models/cart';
 import { getAll, type Product } from '@/models/product';
 
 const products = getAll()
 
-function addToCart(product: Product) {
-    console.log('Add to cart', product)
+function doAddToCart(product: Product) {
+    addToCart(product)
 }
 </script>
 

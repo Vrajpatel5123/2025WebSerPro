@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { RouterLink, useRouter } from 'vue-router'
 
 // import {ref, reactive} from 'vue'
 // the ref function is the core of vue
@@ -28,7 +29,9 @@ const isActive = ref(false)
     <div class="navbar-start">
 
 
-      
+      <RouterLink to="products" class="navbar-item">
+        Product
+      </RouterLink>
 
       <a class="navbar-item">
         Documentation

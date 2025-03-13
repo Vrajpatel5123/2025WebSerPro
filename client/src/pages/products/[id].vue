@@ -11,7 +11,7 @@ const product = getOne(route.params.id)
         <h1 class="title">
             {{ product.title }}
         </h1>
-        <div class="product">
+        <div class="product section">
             <div class="product-info">
                 <p>{{ product.description }}</p>
                 <span class="price">${{ product.price }}</span>
@@ -34,5 +34,13 @@ const product = getOne(route.params.id)
     flex-basis: 50%;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.price{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: palevioletred;
+    display: block;
+    margin: 1em;
 }
 </style>
