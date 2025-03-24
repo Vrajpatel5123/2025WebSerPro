@@ -4,11 +4,14 @@ import NavBar from './components/NavBar.vue'
 import NotificationList from './components/NotificationList.vue';
 import SlidingDrawer from './components/SlidingDrawer.vue';
 import ShoppingCat from './components/ShoppingCat.vue';
+import  { ref } from 'vue';
+
+const isShoppingCartOpen = ref(false);
 </script>
 
 <template>
    <header>
-    <NavBar />
+    <NavBar v-model="isShoppingCartOpen" />
   </header>
 
   <div class="container body-container">
@@ -16,7 +19,7 @@ import ShoppingCat from './components/ShoppingCat.vue';
     <RouterView />
   </div>
 
-  <SlidingDrawer>
+  <SlidingDrawer :isOpen="isShoppingCartOpen">
     <ShoppingCat />
   </SlidingDrawer>
 </template>
