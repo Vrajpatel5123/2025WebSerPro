@@ -1,0 +1,12 @@
+
+###
+GET http://google.com/search?q=new+paltz
+
+###
+GET http://dummyjson.com/products
+
+###
+GET http://dummyjson.com/products/1
+
+###
+http://localhost:8000/products

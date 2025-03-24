@@ -11,7 +11,7 @@ const isShoppingCartOpen = ref(false);
 
 <template>
    <header>
-    <NavBar v-model="isShoppingCartOpen" />
+    <NavBar v-model:is-Shopping-Cart-Open="isShoppingCartOpen" />
   </header>
 
   <div class="container body-container">

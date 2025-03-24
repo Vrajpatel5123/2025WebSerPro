@@ -11,12 +11,13 @@ import { RouterLink, useRouter } from 'vue-router'
 const isActive = ref(false)
 
 const props = defineProps<{
-  isShoppingCartOpen?: boolean
+    isShoppingCartOpen?: boolean
 }>()
 
 const event = defineEmits<{
-  modelUpdate: [boolean]
+    "update:isShoppingCartOpen": [boolean]
 }>()
+
 
 </script>
 
@@ -71,8 +72,8 @@ const event = defineEmits<{
 
     <div class="navbar-end">
       <div class="navbar-item">
-        <button class="button">
-          <i class="fas fa-shopping-cart" @click="event('modelUpdate',true)"></i>
+        <button class="button is-light" :class="{ 'is-active': props.isShoppingCartOpen }"@click="event('update:isShoppingCartOpen', !props.isShoppingCartOpen)">
+                <span class="icon"> <i class="fas fa-shopping-cart"></i></span>
         </button>
       </div>
       <div class="navbar-item">
