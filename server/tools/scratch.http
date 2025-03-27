@@ -9,4 +9,8 @@ GET http://dummyjson.com/products
 GET http://dummyjson.com/products/1
 
 ###
-http://localhost:8000/products
+http://localhost:8000/api/v1/products
+# As you can see above without GET it automatically reads it as GET command as default
+
+###
+GET http://localhost:8000/api/v1/products/1

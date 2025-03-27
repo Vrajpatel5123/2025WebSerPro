@@ -15,7 +15,8 @@ app
     res.send("Hello New Paltz, Ny!!!");
   })
 
-  .use("/products", productsController);
+  .use("/api/v1/products", productsController);
+  //Added above is "/api/v1/products" to the server original was "/products"
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}/`);
