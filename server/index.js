@@ -53,3 +53,26 @@ console.log("Hello World!");
 // To run, go to turn and type in "node server/index.js"
 // type in npm intall -g pnpm
 // then type in pnpm init
+/* 
+  Ways to send data to the server.
+  Correct order ( 2, 1, 4, 3)
+1) Query paramteres: ?name=John$age=30
+2) Path Parameters:  /users/123  
+3) Request Body: { "name": "John", "age": 30 } (Shows up after first blank sign below Content-Type:)
+3.0 ) Form Data: name=John&age=30
+3.5) JSON Data: { "name": "John", "age": 30 }
+4) Headers:
+4.5) Cookies
+*/
+
+/*
+Parts of a URL:
+1) Protocol: http, https, ftp, etc. (http:// or https://)
+2) Domain: www.example.com, localhost, etc. (www.example.com)
+3) Port: 80, 443, etc. (default is 80 for http and 443 for https)
+4) Path: /products, /users, etc. (/path/to/resource)
+5) Query String: ?name=John&age=30 (everything after the question mark is a query) (Pattern to use is form data: ?parametername=parametervalue&parametername=parametervalue)
+6) Fragment: #section1 (anything after the pound sign, meant for the browser)
+
+example: https://www.example.com:80/path/to/resource?name=John&age=30#section1
+*/
