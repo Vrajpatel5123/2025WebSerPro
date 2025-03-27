@@ -76,3 +76,13 @@ Parts of a URL:
 
 example: https://www.example.com:80/path/to/resource?name=John&age=30#section1
 */
+
+/*
+Module Types:
+1) CommonJS: 
+    import: require('module')
+    export: module.exports = {function,variables,etc}
+2) ES6:
+    import: import {function,variables,etc} from 'module'
+    export: export {function,variables,etc}
+*/
