@@ -16,7 +16,7 @@ app
   })
 
   .use("/api/v1/products", productsController);
-  //Added above is "/api/v1/products" to the server original was "/products"
+//Added above is "/api/v1/products" to the server original was "/products"
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}/`);
@@ -85,4 +85,15 @@ Module Types:
 2) ES6:
     import: import {function,variables,etc} from 'module'
     export: export {function,variables,etc}
+*/
+
+// Asynchronous can not have real value or return value. Can be used when node takes more than split second to run.
+
+/*
+  Asynchronous Programming in Node.js:
+   1) Call Backs
+   2) Pipeline
+   3) Promises :  a object that has a set that knows what they do, and promises when its done its going to call its done and if not then it will say error
+   4) Async/Await : put the async in front of the function, await creates a promise for you and only allowed to call it inside async function
+
 */
