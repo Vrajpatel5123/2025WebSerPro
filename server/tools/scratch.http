@@ -1,8 +1,8 @@
+## B"H
 
 
 ###
 http://localhost:8000/api/v1/products
-# As you can see above without GET it automatically reads it as GET command as default
 
 ###
 GET http://localhost:8000/api/v1/products/1
@@ -12,12 +12,12 @@ POST http://localhost:8000/api/v1/products
 Content-Type: application/json
 
 {
-    "title": "New Product",
-    "description": "This is a new product",
-    "price": 100,
-    "category": "electronics",
-    "image": "https://example.com/image.jpg",
-    "stock": 50
+  "title": "New Product",
+  "description": "This is a new product",
+  "price": 100,
+  "category": "electronics",
+  "image": "https://example.com/image.jpg",
+  "stock": 50
 }
 
 ###
@@ -25,7 +25,7 @@ PATCH http://localhost:8000/api/v1/products/1
 Content-Type: application/json
 
 {
-    "price": 150
+  "price": 150
 }
 
 ###

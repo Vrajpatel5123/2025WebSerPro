@@ -10,12 +10,29 @@ const PORT = 8000;
 
 const app = express();
 
+//Middleware  (process it only if its nessesary)
+    app.use(express.json()); // Parse JSON request body
+
+//Controller middleware
+
 app
   .get("/", (req, res) => {
     res.send("Hello New Paltz, Ny!!!");
   })
 
-  .use("/api/v1/products", productsController);
+  .use("/api/v1/products", productsController)
+
+//error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err)
+  const status = err.status || 500
+
+  const error = {
+    status,
+    message: err.message || 'Internal Server Error',
+  }
+  res.status(status).send(error)
+ })
 //Added above is "/api/v1/products" to the server original was "/products"
 
 app.listen(PORT, () => {
