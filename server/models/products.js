@@ -1,53 +1,56 @@
-/* B"H
+/*  B"H
 */
 
-const data = require("../data/products.json");
+const data = require('../data/products.json')
+const { CustomError, statusCodes } = require('./errors')
 
-// 03/31/2025 add async function to all the functions as shows below!
+const isAdmin = true;
 
-//Inside model never have EXPRESS, only in controller
-async function getAll(){
+async function getAll() {
     return data
 }
 
 async function get(id){
     const item = data.items.find((item) => item.id == id)
-    if(!item){
-        throw new Error('Item not found', {status: 404})
+    if (!item) {
+        throw new CustomError('Item not found', statusCodes.NOT_FOUND)
     }
     return item
 }
 
 async function create(item){
+    if(!isAdmin){
+        throw CustomError("Sorry, you are not an admin", statusCodes.UNAUTHORIZED)
+    }
     const newItem = {
-        id: data.items.length +1,
+        id: data.items.length + 1,
         ...item
     }
     data.items.push(newItem)
     return newItem
 }
 
-async function update(id,item){
-    const index = data.items.findIndex((item) => item.id === id)
-    if(index === -1){
+async function update(id, item){
+    const index = data.items.findIndex((item) => item.id == id)
+    if (index === -1) {
         return null
     }
     const updatedItem = {
-        ...data.items[index],  //... is it takes every single and copy all the properties of the object
-        ...item //... it takes the properties of the item and copy all the properties of the object
-        //new object that has properties of the old object and the new object
+        ...data.items[index],
+        ...item
     }
     data.items[index] = updatedItem
     return updatedItem
+
 }
 
 async function remove(id){
-    const index = data.items.findIndex((item) => item.id === id)
-    if(index === -1){
+    const index = data.items.findIndex((item) => item.id == id)
+    if (index === -1) {
         return null
     }
     const deletedItem = data.items[index]
-    data.items.splice(index, 1) //index is the position of the item and 1 is how many items to remove
+    data.items.splice(index, 1)
     return deletedItem
 }
 
