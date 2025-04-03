@@ -13,14 +13,15 @@ const app = express();
 //Middleware  (process it only if its nessesary)
     app.use(express.json()); // Parse JSON request body
 
-//Controller middleware
-
+//Controller 
 app
-  .get("/", (req, res) => {
+  .get("/hello", (req, res) => {
     res.send("Hello New Paltz, Ny!!!");
   })
 
   .use("/api/v1/products", productsController)
+
+  .use('/', express.static('dist')) // Serve static files from the public directory
 
 //error handling middleware
 app.use((err, req, res, next) => {
