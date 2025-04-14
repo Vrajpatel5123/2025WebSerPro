@@ -1,6 +1,6 @@
 /*  B"H
 */
-const model = require('../models/products')
+const model = require('../models/users')
 const express = require('express')
 const router = express.Router()
 
@@ -44,21 +44,5 @@ router
             res.send(data)
         }).catch(next)
     })
-    .get('/search/:query', (req, res, next) => {
-        const { query } = req.params
-
-        model.search(query).then((data) => {
-            res.send(data)
-        }).catch(next)
-
-    })
-    .post('/seed', (req, res, next) => {
-        const { data } = req.body
-
-        model.seed(data).then((data) => {
-            res.status(201).send(data)
-        }).catch(next)
-    })
-
 
 module.exports = router

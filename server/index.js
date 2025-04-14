@@ -5,8 +5,10 @@
 // Accepted progress is 1) const, 2) let and then 3) var
 const express = require("express");
 const productsController = require("./controllers/products");
+const usersController = require("./controllers/users"); // Added this line to the server
+require('dotenv').config()
 
-const PORT = 8000;
+const PORT = process.env.PORT ?? 8000;
 
 const app = express();
 
@@ -20,6 +22,7 @@ app
   })
 
   .use("/api/v1/products", productsController)
+  .use('/api/v1/users', usersController) // Added this line to the server
 
   .use('/', express.static('dist')) // Serve static files from the public directory
 
@@ -37,7 +40,10 @@ app.use((err, req, res, next) => {
 //Added above is "/api/v1/products" to the server original was "/products"
 
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
+  console.log(`
+    Welcome to the best class at New Paltz - ${process.env.BEST_CLASS}
+    Server running at http://localhost:${PORT}/`
+  );
 });
 // Above is
 
